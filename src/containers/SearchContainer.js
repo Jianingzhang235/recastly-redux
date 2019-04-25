@@ -1,6 +1,13 @@
 import { connect } from 'react-redux';
 import Search from './../components/Search.js';
 import handleSearchChange from '../actions/search.js';
+// import store from '../store/store.js'
+const mapStateToProps = (state) =>{
+  return {
+    currentVideo: state.CurrentVideo,
+    videos: state.videos
+  }
+}
 
 var SearchContainer = () => {};
 

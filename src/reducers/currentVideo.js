@@ -6,7 +6,7 @@ var currentVideoReducer = (state = null, action) => {
   //   return 
   // }
   if(action.type === "CHANGE_VIDEO"){
-       return action.video;
+    return action.video;
   } else {
     return state;
   }

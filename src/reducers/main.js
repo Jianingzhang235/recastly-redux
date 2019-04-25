@@ -1,8 +1,22 @@
 import { combineReducers } from 'redux';
 import currentVideo from './currentVideo.js';
 import videoList from './videoList.js';
+import videoListReducer from './videoList.js';
+import currentVideoReducer from './currentVideo.js';
 
-var rootReducer = () => {};
+var rootReducer = combineReducers({currentVideo: currentVideoReducer, videoList: videoListReducer});
+// = (state = {videoList:[], currentVideo:null}, action) => {
+
+  
+  // if(action.type === 'CHANGE_VIDEO_LIST'){
+  //   videoListReducer(state, action)
+  // }
+  // if(action.type === 'CHANGE_VIDEO'){
+  //   currentVideoReducer(state, action)
+  // }
+
+//   combineReducers({currentVideo: currentVideoReducer, videoList: videoListReducer})
+// };
 
 //TODO: define the root reducer for this app
 
@@ -11,3 +25,5 @@ var rootReducer = () => {};
 //  listed above.
 
 export default rootReducer;
+
+// export default combineReducers({currentVideo: currentVideoReducer, videoList: videoListReducer})
