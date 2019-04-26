@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
-import searchYouTube from './lib/searchYouTube.js';
-import YOUTUBE_API_KEY from './config/youtube.js';
+import store from './store/store.js'
+import {Provider} from 'react-redux'
+import handleSearchChange from './actions/search.js';
+
 
 //TODO: Import the Provider component from 'react-redux' here!
 
@@ -10,6 +12,9 @@ import YOUTUBE_API_KEY from './config/youtube.js';
 //  the rest of your app.
 
 ReactDOM.render(
-  <App API_KEY={YOUTUBE_API_KEY} searchYouTube={searchYouTube} />,
-  document.getElementById('app')
+  <Provider store = {store}>
+    <App />
+  </Provider>,
+  document.getElementById('app'), 
+  () => handleSearchChange('Trappin In Japan')(store.dispatch)
 );
